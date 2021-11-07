@@ -2,73 +2,38 @@ import java.util.List;
 
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-//        long i1 = getNumbers(l1);
-//        long i2 = getNumbers(l2);
-//        long sum = i1 + i2;
-//        ListNode returnList = new ListNode();
-//        ListNode tmp = returnList;
-//        while (sum / 10 != 0) {
-//            tmp.val = (int)(sum % 10);
-//            tmp.next = new ListNode();
-//            tmp = tmp.next;
-//            sum = sum / 10;
-//        }
-//        tmp.val = (int)sum % 10;
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+        ListNode resDummy = new ListNode(-1, null);
+        ListNode p = resDummy;
 
-        ListNode reversedL1 = reverseList(l1);
-        ListNode reversedL2 = reverseList(l2);
-        ListNode returnList = new ListNode();
-        ListNode tmp = returnList;
-        while (reversedL1 != null && reversedL2 != null) {
-            tmp.val = (reversedL1.val + reversedL2.val) % 10;
-            tmp = tmp.next;
-            if ((reversedL1.val + reversedL2.val) >= 10) {
-                tmp.val += 1;
-            }
-        }
-        return returnList;
-    }
+        int sum;
+        int carry = 0;
 
-    public long getNumbers(ListNode head) {
-        ListNode tmp = head;
-        long returnValue = 0;
-        int digit = 0;
-        while (tmp != null) {
-            returnValue += Math.pow(10, digit) * tmp.val;
-            digit += 1;
-            tmp = tmp.next;
-        }
-        return returnValue;
-    }
+        while (p1 != null && p2 != null) {
+            sum = p1.val + p2.val + carry;
+            p1 = p1.next;
+            p2 = p2.next;
 
-    public ListNode reverseList(ListNode head) {
-        if (head == null) {
-            return head;
-        }
-        ListNode tmp = head;
-        ListNode tmpBefore = head;
-        ListNode tmpAfter = head.next;
+            p.next = new ListNode(sum % 10, null);
+            carry = sum / 10;
 
-        while (tmpAfter != null) {
-            tmp = tmpAfter;
-            tmpAfter = tmpAfter.next;
-            tmp.next = tmpBefore;
-            tmpBefore = tmp;
+            p = p.next;
+
+            if (p1 == null && p2 == null && carry == 0) break;
+            if (p1 == null) p1 = new ListNode(0, null);
+            if (p2 == null) p2 = new ListNode(0, null);
         }
-        head.next = null;
-        return tmp;
+
+        return resDummy.next;
     }
 
     public static void main(String[] args) {
         AddTwoNumbers test = new AddTwoNumbers();
-        ListNode l1 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
+        ListNode l1 = new ListNode(1, new ListNode(9, null));
         ListNode l2 = new ListNode(9);
 
-        System.out.println(test.getNumbers(l1));
-        System.out.println(test.getNumbers(l2));
-        System.out.println(test.getNumbers(l1) + test.getNumbers(l2));
         ListNode returnList = test.addTwoNumbers(l1, l2);
-        System.out.println(returnList.val);
-
+        System.out.println(returnList);
     }
 }
