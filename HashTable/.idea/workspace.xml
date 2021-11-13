@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b0fd1f-afb4-49ef-a90e-90dc4f1920d5" name="Changes" comment="383. Ransom Note">
-      <change afterPath="$PROJECT_DIR$/src/FirstUniqueCharInString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="80b0fd1f-afb4-49ef-a90e-90dc4f1920d5" name="Changes" comment="387. First Unique Character in a String" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636594299577</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="387. First Unique Character in a String">
+      <created>1636777851990</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636777851990</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +157,7 @@
     <MESSAGE value="-Intersection of Array_349" />
     <MESSAGE value="454. 4Sum II" />
     <MESSAGE value="383. Ransom Note" />
-    <option name="LAST_COMMIT_MESSAGE" value="383. Ransom Note" />
+    <MESSAGE value="387. First Unique Character in a String" />
+    <option name="LAST_COMMIT_MESSAGE" value="387. First Unique Character in a String" />
   </component>
 </project>
